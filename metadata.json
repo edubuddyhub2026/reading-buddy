@@ -1,0 +1,6 @@
+{
+  "name": "I Love My Cat - Reading Book",
+  "description": "An interactive children's reading book with text-to-speech, highlighting, and reading comprehension questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

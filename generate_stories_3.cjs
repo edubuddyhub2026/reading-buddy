@@ -1,0 +1,468 @@
+const fs = require('fs');
+
+const stories = [];
+
+// LEVEL 2 - STAGE 2 (10 stories, 10 sentences, medium length)
+stories.push({
+  title: "The Twin Towers",
+  content: [
+    "Hao Yu visited the majestic Petronas Twin Towers in Kuala Lumpur.",
+    "He stood at the base and looked up at the shiny silver buildings.",
+    "The towers stretched so high that they seemed to touch the clouds.",
+    "His family bought tickets to walk across the famous Skybridge.",
+    "They took a fast elevator that zoomed up many floors in seconds.",
+    "Walking on the glass bridge, Hao Yu felt a little bit nervous.",
+    "However, the spectacular view of the bustling city quickly amazed him.",
+    "He could see tiny cars moving along the winding roads below.",
+    "Hao Yu took many panoramic photos to show his friends at school.",
+    "Visiting the incredible landmark made him feel proud of his beautiful country."
+  ],
+  questions: [
+    { question: "What did Hao Yu visit?", answer: "He visited the majestic Petronas Twin Towers." },
+    { question: "What did his family buy tickets for?", answer: "They bought tickets to walk across the famous Skybridge." },
+    { question: "How did the view of the city make him feel?", answer: "The spectacular view of the bustling city quickly amazed him." },
+    { question: "What did he take photos of?", answer: "He took many panoramic photos to show his friends." }
+  ]
+});
+
+stories.push({
+  title: "A Day at the Paddy Field",
+  content: [
+    "Aina travelled to a rural village in Kedah during the school holidays.",
+    "She saw endless, bright green paddy fields stretching across the flat landscape.",
+    "Her grandfather taught her how rice is grown in the wet mud.",
+    "Aina watched the farmers working tirelessly under the scorching tropical sun.",
+    "They used special machines to harvest the golden, ripe rice stalks efficiently.",
+    "In the afternoon, Aina flew a traditional wau kite in the strong wind.",
+    "Her friend Kavin joined her, running happily along the narrow mud paths.",
+    "They rested under a shady tree and drank refreshing, sweet coconut water.",
+    "Aina learned that producing a bowl of rice requires immense hard work.",
+    "She promised to always appreciate her food and never waste a single grain."
+  ],
+  questions: [
+    { question: "Where did Aina travel to?", answer: "She travelled to a rural village in Kedah." },
+    { question: "What did her grandfather teach her?", answer: "He taught her how rice is grown in the wet mud." },
+    { question: "What did Aina fly in the afternoon?", answer: "She flew a traditional wau kite in the strong wind." },
+    { question: "What did Aina promise to do?", answer: "She promised to appreciate her food and never waste a single grain." }
+  ]
+});
+
+stories.push({
+  title: "The School Choir",
+  content: [
+    "Divya auditioned for the school choir because she possessed a beautiful voice.",
+    "The music teacher selected her to sing the important solo part.",
+    "Divya practiced her song diligently every single day after completing her homework.",
+    "She felt incredibly nervous during the final rehearsal on the main stage.",
+    "Her friends, Aiman and Xin Yi, encouraged her to sing with absolute confidence.",
+    "On the day of the concert, the large auditorium was packed with parents.",
+    "When it was her turn, Divya stepped forward and sang the first note.",
+    "Her clear, melodic voice filled the silent room beautifully and captivated everyone.",
+    "The audience erupted into thunderous applause when she finished her emotional performance.",
+    "Divya beamed with pride, realising that hard work always leads to wonderful success."
+  ],
+  questions: [
+    { question: "Why did Divya audition for the school choir?", answer: "She auditioned because she possessed a beautiful voice." },
+    { question: "What did the music teacher select her to do?", answer: "The music teacher selected her to sing the important solo part." },
+    { question: "Who encouraged her to sing with confidence?", answer: "Her friends, Aiman and Xin Yi, encouraged her." },
+    { question: "How did the audience react to her performance?", answer: "The audience erupted into thunderous applause." }
+  ]
+});
+
+stories.push({
+  title: "The Orangutan Sanctuary",
+  content: [
+    "Irfan visited a famous orangutan sanctuary located in the rainforests of Sabah.",
+    "He learned that these intelligent primates are an endangered and protected species.",
+    "The eager visitors waited quietly near a large wooden feeding platform.",
+    "A mother orangutan swung gracefully through the thick canopy with her baby.",
+    "She climbed down the ropes to collect fresh bananas and juicy papayas.",
+    "Irfan watched in awe as the baby clung tightly to its mother's fur.",
+    "The sanctuary rangers explained the vital importance of protecting natural forest habitats.",
+    "Irfan decided to donate a small portion of his pocket money to help.",
+    "He purchased a soft orangutan toy as a meaningful souvenir of his trip.",
+    "Protecting our precious wildlife ensures that future generations can enjoy their beauty."
+  ],
+  questions: [
+    { question: "Where did Irfan visit?", answer: "He visited a famous orangutan sanctuary in Sabah." },
+    { question: "What did the mother orangutan collect?", answer: "She collected fresh bananas and juicy papayas." },
+    { question: "What did the sanctuary rangers explain?", answer: "They explained the vital importance of protecting natural forest habitats." },
+    { question: "What did Irfan decide to donate?", answer: "He decided to donate a small portion of his pocket money." }
+  ]
+});
+
+stories.push({
+  title: "The Science Fair Winner",
+  content: [
+    "Wei Ming prepared an impressive solar energy project for the school science fair.",
+    "He built a miniature car that ran entirely on small, attached solar panels.",
+    "He spent weeks testing the tiny motor to ensure it functioned perfectly.",
+    "On the day of the fair, Wei Ming presented his project enthusiastically.",
+    "He explained how renewable energy can significantly reduce harmful environmental pollution.",
+    "The judges listened attentively to his clear and confident scientific presentation.",
+    "They were amazed when the car zoomed swiftly across the brightly lit table.",
+    "Wei Ming answered all their difficult questions with profound knowledge and ease.",
+    "At the end of the day, the principal awarded him the shiny gold medal.",
+    "His passion for science inspired many other students to build their own inventions."
+  ],
+  questions: [
+    { question: "What did Wei Ming prepare for the science fair?", answer: "He prepared an impressive solar energy project." },
+    { question: "What powered his miniature car?", answer: "The car ran entirely on small, attached solar panels." },
+    { question: "What can renewable energy reduce?", answer: "Renewable energy can significantly reduce harmful environmental pollution." },
+    { question: "What did the principal award him?", answer: "The principal awarded him the shiny gold medal." }
+  ]
+});
+
+stories.push({
+  title: "The Community Gotong-Royong",
+  content: [
+    "The neighbourhood organised a gotong-royong to clean up the local playground area.",
+    "Families of all races gathered early in the morning with brooms and rubbish bags.",
+    "Adam helped his father paint the rusty swings with a fresh coat of blue paint.",
+    "Priya and Mei Ling worked together to sweep the dry, fallen leaves enthusiastically.",
+    "The adults cleared the clogged drains to prevent dangerous flash floods.",
+    "Everyone chatted happily and laughed while working under the warm morning sun.",
+    "After the hard work, they shared a delicious potluck meal on the clean grass.",
+    "They enjoyed nasi lemak, curry puffs, and sweet traditional kuih together.",
+    "The community effort transformed the dirty playground into a beautiful, safe park.",
+    "Working together strengthens friendships and creates a wonderful, harmonious neighbourhood."
+  ],
+  questions: [
+    { question: "What did the neighbourhood organise?", answer: "They organised a gotong-royong to clean up the local playground." },
+    { question: "What did Adam help his father do?", answer: "He helped his father paint the rusty swings with blue paint." },
+    { question: "What did they share after the hard work?", answer: "They shared a delicious potluck meal on the clean grass." },
+    { question: "What did the community effort transform the playground into?", answer: "It transformed the dirty playground into a beautiful, safe park." }
+  ]
+});
+
+stories.push({
+  title: "The Night Market Treats",
+  content: [
+    "Hana loved visiting the bustling night market near her house every Friday evening.",
+    "The lively street was filled with colourful tents and bright, glowing lights.",
+    "She walked past stalls selling fresh vegetables, clothing, and fascinating wooden toys.",
+    "The delicious smell of freshly grilled satay drifted through the cool night air.",
+    "Hana bought a large cup of sweet, refreshing sugarcane juice from a friendly vendor.",
+    "She also purchased some hot, crispy apam balik filled with crushed peanuts.",
+    "Her friend Surya was at the next stall buying some spicy fried noodles.",
+    "They sat on a nearby wooden bench to enjoy their tasty local snacks.",
+    "The night market was always a vibrant display of amazing Malaysian culture.",
+    "Hana looked forward to returning the following week for more delicious treats."
+  ],
+  questions: [
+    { question: "When did Hana visit the night market?", answer: "She visited the night market every Friday evening." },
+    { question: "What did the delicious smell of grilled satay do?", answer: "The delicious smell drifted through the cool night air." },
+    { question: "What did Hana buy from a friendly vendor?", answer: "She bought a large cup of sweet, refreshing sugarcane juice." },
+    { question: "What was Surya buying at the next stall?", answer: "Surya was buying some spicy fried noodles." }
+  ]
+});
+
+stories.push({
+  title: "The Lost Library Book",
+  content: [
+    "Zaid was frantic because he could not locate his borrowed library book anywhere.",
+    "The important book about dinosaurs was due to be returned the very next day.",
+    "He searched his messy bedroom, looking under his bed and behind the curtains.",
+    "Zaid even checked the kitchen table where he had eaten his breakfast earlier.",
+    "His mother suggested that he check his heavy school bag one more time.",
+    "He emptied the contents of the bag carefully onto the living room floor.",
+    "To his immense relief, the dinosaur book was hidden inside a large folder.",
+    "Zaid quickly placed the precious book safely on the table near the front door.",
+    "He promised his mother that he would organise his school bag much better.",
+    "Keeping things tidy prevents unnecessary stress and ensures belongings are never lost."
+  ],
+  questions: [
+    { question: "Why was Zaid frantic?", answer: "He was frantic because he could not locate his borrowed library book." },
+    { question: "What was the important book about?", answer: "The important book was about dinosaurs." },
+    { question: "What did his mother suggest he check?", answer: "She suggested that he check his heavy school bag one more time." },
+    { question: "Where was the dinosaur book hidden?", answer: "The dinosaur book was hidden inside a large folder." }
+  ]
+});
+
+stories.push({
+  title: "A Trip to the Museum",
+  content: [
+    "The eager students went on an educational field trip to the National Museum.",
+    "They walked through a large gallery displaying ancient, traditional Malaysian weapons.",
+    "Kavitha was fascinated by the intricate carvings on the beautiful wooden keris.",
+    "The knowledgeable tour guide explained the rich history of the Malacca Sultanate clearly.",
+    "They saw old, faded maps that showed the ancient trading routes of the world.",
+    "In the next room, they observed colourful traditional costumes from different cultures.",
+    "Ali and Wei Ming took detailed notes in their small notebooks for their project.",
+    "The museum visit helped the students understand the diverse heritage of their country.",
+    "They boarded the bus feeling incredibly inspired by the fascinating historical artifacts.",
+    "Learning about the past helps us appreciate the wonderful world we live in today."
+  ],
+  questions: [
+    { question: "Where did the eager students go on a field trip?", answer: "They went on an educational field trip to the National Museum." },
+    { question: "What was Kavitha fascinated by?", answer: "She was fascinated by the intricate carvings on the wooden keris." },
+    { question: "What did the old, faded maps show?", answer: "They showed the ancient trading routes of the world." },
+    { question: "Who took detailed notes in their small notebooks?", answer: "Ali and Wei Ming took detailed notes in their small notebooks." }
+  ]
+});
+
+stories.push({
+  title: "The Jungle Trek",
+  content: [
+    "Adam went on an adventurous jungle trek with his family in Taman Negara.",
+    "They wore comfortable hiking boots and sprayed insect repellent on their arms.",
+    "The dense rainforest was incredibly humid and filled with noisy, buzzing insects.",
+    "They walked cautiously along a narrow dirt trail surrounded by gigantic, towering trees.",
+    "Adam spotted a beautiful, brightly coloured kingfisher resting on a low branch.",
+    "They carefully crossed a rushing river using an old, swaying wooden suspension bridge.",
+    "His father pointed out a unique pitcher plant growing near the damp ground.",
+    "They rested on a large boulder and drank cold water from their reusable bottles.",
+    "The trek was challenging, but exploring the untouched nature was deeply rewarding.",
+    "Preserving our magnificent rainforests is essential for the survival of rare wildlife."
+  ],
+  questions: [
+    { question: "Where did Adam go on a jungle trek?", answer: "He went on a jungle trek with his family in Taman Negara." },
+    { question: "What did the dense rainforest sound like?", answer: "It was filled with noisy, buzzing insects." },
+    { question: "How did they cross the rushing river?", answer: "They crossed the river using an old, swaying wooden suspension bridge." },
+    { question: "What unique plant did his father point out?", answer: "His father pointed out a unique pitcher plant." }
+  ]
+});
+
+
+// LEVEL 2 - STAGE 3 (10 stories, 12 sentences, slightly longer)
+stories.push({
+  title: "The Missing Bicycles",
+  content: [
+    "Danish and Jun Hao rode their bicycles to the busy community park every single evening.",
+    "They always parked their bikes carefully near the tall, shady angsana tree.",
+    "One Friday, after playing an exciting football match, they discovered their bicycles were missing.",
+    "Danish felt a sudden wave of panic as he frantically searched the surrounding area.",
+    "Jun Hao suggested they remain calm and ask the friendly park security guard for assistance.",
+    "The guard, Encik Rosli, listened attentively to their problem and immediately checked the grounds.",
+    "He remembered seeing a confused younger boy accidentally riding away on a similar blue bike.",
+    "Encik Rosli led the boys to the other side of the large, sprawling park.",
+    "They found the young boy crying because he realised he had taken the wrong bicycle.",
+    "Danish kindly reassured the frightened boy that it was just an honest, simple mistake.",
+    "They successfully swapped the bicycles back and thanked Encik Rosli profusely for his immense help.",
+    "Approaching difficult situations with a calm and understanding attitude solves problems much more effectively."
+  ],
+  questions: [
+    { question: "Where did Danish and Jun Hao park their bicycles?", answer: "They parked their bikes near the tall, shady angsana tree." },
+    { question: "What did they discover after the football match?", answer: "They discovered their bicycles were missing." },
+    { question: "Who did they ask for assistance?", answer: "They asked the friendly park security guard, Encik Rosli, for assistance." },
+    { question: "Why was the young boy crying?", answer: "He was crying because he realised he had taken the wrong bicycle." }
+  ]
+});
+
+stories.push({
+  title: "The Cultural Food Festival",
+  content: [
+    "Alya attended a magnificent cultural food festival hosted in the bustling city centre of Penang.",
+    "The large outdoor square was completely transformed with vibrant flags and beautifully decorated stalls.",
+    "The delicious, mixed aromas of spicy curries and sweet desserts drifted through the warm air.",
+    "Alya tasted an authentic bowl of creamy laksa that was bursting with incredible local flavours.",
+    "She then visited a traditional Indian stall and purchased some crispy, golden-brown murukku snacks.",
+    "Her friend Xin Yi introduced her to a sweet, refreshing bowl of iced cendol dessert.",
+    "The friendly vendors eagerly shared fascinating historical stories about their unique heritage and family recipes.",
+    "Alya realised that Malaysia's diverse food culture is a beautiful reflection of its harmonious people.",
+    "She bought some assorted traditional kuih in a decorated box as a special souvenir for her parents.",
+    "The vibrant festival gave her a profound appreciation for the different cultures living peacefully together.",
+    "Sharing delicious food is a wonderful way to learn about and respect our diverse communities.",
+    "Celebrating our unique differences is absolutely essential for promoting understanding and international harmony."
+  ],
+  questions: [
+    { question: "Where was the cultural food festival hosted?", answer: "It was hosted in the bustling city centre of Penang." },
+    { question: "What did Alya taste that was bursting with local flavours?", answer: "She tasted an authentic bowl of creamy laksa." },
+    { question: "Who introduced Alya to a sweet bowl of iced cendol?", answer: "Her friend Xin Yi introduced her to iced cendol." },
+    { question: "What did Alya realise about Malaysia's diverse food culture?", answer: "She realised it is a beautiful reflection of its harmonious people." }
+  ]
+});
+
+stories.push({
+  title: "The Mangrove Forest",
+  content: [
+    "Kavin joined a school excursion to explore the fascinating mangrove forests in beautiful Langkawi.",
+    "The eager students boarded a small wooden boat that navigated smoothly through the murky river.",
+    "Their knowledgeable guide explained how the complex, tangled mangrove roots protect the delicate coastline.",
+    "Kavin closely observed a mudskipper hopping surprisingly fast across the wet, slippery riverbank.",
+    "He was amazed to see a group of mischievous macaques swinging playfully from the low branches.",
+    "The guide pointed upward, revealing a majestic Brahminy kite eagle circling high in the sky.",
+    "The students learned that these unique forests act as a crucial nursery for juvenile fish.",
+    "Kavin felt a deep sense of wonder surrounded by such a thriving, interconnected natural ecosystem.",
+    "They also learned about the devastating threats of pollution and harmful illegal logging activities.",
+    "Before leaving, the class enthusiastically participated in planting several new mangrove saplings in the mud.",
+    "Kavin returned home with a strong, renewed determination to actively protect the natural environment.",
+    "Preserving our precious coastal ecosystems is vital for maintaining a healthy and balanced planet."
+  ],
+  questions: [
+    { question: "What did Kavin explore during his school excursion?", answer: "He explored the fascinating mangrove forests in Langkawi." },
+    { question: "What do the complex mangrove roots protect?", answer: "The complex, tangled mangrove roots protect the delicate coastline." },
+    { question: "What was circling high in the sky?", answer: "A majestic Brahminy kite eagle was circling high in the sky." },
+    { question: "What did the class do before leaving the forest?", answer: "They enthusiastically participated in planting several new mangrove saplings." }
+  ]
+});
+
+stories.push({
+  title: "The Secret Recipe",
+  content: [
+    "Nur wanted to cook something incredibly special for her mother's upcoming birthday celebration.",
+    "She decided to secretly prepare her grandmother's famous, traditional chicken rendang dish.",
+    "Nur carefully gathered fragrant lemongrass, spicy chillies, and fresh coconut milk from the market.",
+    "She spent hours in the kitchen meticulously grinding the aromatic spices into a thick paste.",
+    "The rich, spicy scent of the cooking rendang slowly filled the entire house with warmth.",
+    "Her brother Amir helped her decorate the dining table with a beautiful, floral batik cloth.",
+    "When her mother returned from work, she was completely astonished by the wonderful surprise dinner.",
+    "They sat down together to enjoy the tender, flavourful chicken with steaming hot white rice.",
+    "Her mother smiled warmly and declared it was the most delicious rendang she had ever tasted.",
+    "Nur felt an overwhelming surge of pride for successfully recreating the cherished family recipe.",
+    "She realised that cooking a thoughtful meal is a profound way to express deep love.",
+    "Sharing homemade, traditional food creates lasting memories that families will always treasure."
+  ],
+  questions: [
+    { question: "What did Nur decide to secretly prepare?", answer: "She decided to secretly prepare her grandmother's famous chicken rendang." },
+    { question: "What ingredients did Nur gather from the market?", answer: "She gathered fragrant lemongrass, spicy chillies, and fresh coconut milk." },
+    { question: "How did her brother Amir help?", answer: "He helped decorate the dining table with a beautiful batik cloth." },
+    { question: "What did Nur realise about cooking a thoughtful meal?", answer: "She realised it is a profound way to express deep love." }
+  ]
+});
+
+stories.push({
+  title: "The Cave Exploration",
+  content: [
+    "Jia Jun and his adventurous family visited the spectacular Batu Caves located near Kuala Lumpur.",
+    "They stood in sheer awe at the base of the massive, golden statue towering above them.",
+    "Jia Jun bravely climbed the steep, colourful concrete stairs leading up to the main entrance.",
+    "Inside the colossal limestone cavern, the air felt remarkably cool and slightly damp.",
+    "He listened intently to the echoing sound of water dripping slowly from the high, rocky ceiling.",
+    "The family marvelled at the ancient, intricate Hindu shrines beautifully built inside the majestic cave.",
+    "Suddenly, a small, curious monkey tried to grab a brightly coloured plastic bag from a tourist.",
+    "Jia Jun's father calmly explained that wild animals should never be fed or provoked unnecessarily.",
+    "They ventured deeper into the darkness to observe the fascinating stalactites hanging from the roof.",
+    "The natural beauty and profound cultural significance of the caves deeply impressed Jia Jun.",
+    "He captured many stunning photographs to share his incredible journey with his excited classmates.",
+    "Exploring ancient, natural wonders reveals the breathtaking secrets hidden deeply beneath the earth's surface."
+  ],
+  questions: [
+    { question: "Where did Jia Jun and his family visit?", answer: "They visited the spectacular Batu Caves near Kuala Lumpur." },
+    { question: "What did they marvel at inside the majestic cave?", answer: "They marvelled at the ancient, intricate Hindu shrines." },
+    { question: "What tried to grab a plastic bag from a tourist?", answer: "A small, curious monkey tried to grab a plastic bag." },
+    { question: "What do exploring ancient natural wonders reveal?", answer: "It reveals breathtaking secrets hidden deeply beneath the earth's surface." }
+  ]
+});
+
+stories.push({
+  title: "The Innovation Challenge",
+  content: [
+    "Ravi and Aina formed a dedicated team for the prestigious national student innovation challenge.",
+    "They noticed that many students carelessly wasted clean water while washing their hands at school.",
+    "The determined duo designed a smart, automated tap system using affordable, recycled electronic sensors.",
+    "They spent several frustrating weeks writing complicated computer code and testing their intricate prototype.",
+    "Sometimes the sensitive sensors failed to detect movement, causing them to rewrite the programming.",
+    "Aina encouraged Ravi to remain patient and focus on finding a logical, practical solution.",
+    "Finally, their smart tap successfully dispensed water only when a hand was directly underneath.",
+    "On the presentation day, they confidently demonstrated their working invention to the esteemed judges.",
+    "The judges praised their highly innovative design and their strong commitment to environmental conservation.",
+    "Ravi and Aina proudly accepted the shiny silver trophy for winning the first-place prize.",
+    "They hoped their clever invention would eventually be installed in every school bathroom nationwide.",
+    "Overcoming difficult technical challenges is entirely possible when you communicate and work together effectively."
+  ],
+  questions: [
+    { question: "What did Ravi and Aina design?", answer: "They designed a smart, automated tap system using electronic sensors." },
+    { question: "Why did they rewrite the programming sometimes?", answer: "They rewrote it because the sensitive sensors failed to detect movement." },
+    { question: "What did the judges praise?", answer: "They praised their innovative design and commitment to environmental conservation." },
+    { question: "What is possible when you communicate and work together effectively?", answer: "Overcoming difficult technical challenges is entirely possible." }
+  ]
+});
+
+stories.push({
+  title: "The Island Ferry",
+  content: [
+    "Sofea embarked on an exciting ferry ride across the ocean to beautiful Penang Island.",
+    "She wore a bright yellow sunhat to protect her face from the harsh tropical rays.",
+    "The enormous passenger ferry slowly departed from the busy, noisy terminal on the mainland.",
+    "Sofea stood on the open deck, feeling the refreshing, salty sea breeze against her skin.",
+    "She excitedly observed several playful dolphins leaping gracefully alongside the moving, white boat.",
+    "The ferry bounced rhythmically over the gentle, rolling waves created by the strong ocean currents.",
+    "As they approached the island, Sofea admired the lush green hills and historical, colonial buildings.",
+    "Her parents pointed out the famous Penang Bridge stretching extensively across the wide, blue strait.",
+    "They safely disembarked at the bustling port, ready to begin their wonderful family holiday.",
+    "Sofea knew they would immediately search for the island's legendary, mouth-watering street food stalls.",
+    "The memorable boat journey was the perfect start to their highly anticipated weekend getaway.",
+    "Experiencing new forms of travel provides unforgettable adventures and widens our perspective of the world."
+  ],
+  questions: [
+    { question: "Where was Sofea traveling to?", answer: "She was traveling across the ocean to beautiful Penang Island." },
+    { question: "What did she observe leaping alongside the boat?", answer: "She observed several playful dolphins leaping gracefully alongside the boat." },
+    { question: "What did her parents point out?", answer: "They pointed out the famous Penang Bridge stretching across the strait." },
+    { question: "What provides unforgettable adventures and widens our perspective?", answer: "Experiencing new forms of travel provides unforgettable adventures." }
+  ]
+});
+
+stories.push({
+  title: "The Shadow Play",
+  content: [
+    "Hakim attended a mesmerising Wayang Kulit performance in a rural village located in Kelantan.",
+    "The traditional shadow play was held outdoors under the twinkling light of the starry sky.",
+    "He sat on a woven mat, eagerly waiting for the fascinating, ancient story to begin.",
+    "The skilled puppeteer, known as the Tok Dalang, sat behind a large, illuminated white screen.",
+    "He skillfully manipulated the intricately carved leather puppets to cast dramatic, moving shadows.",
+    "The accompanying musicians played a rhythmic, enchanting melody using traditional drums and gongs.",
+    "Hakim was completely captivated by the epic tale of brave, mythical heroes and terrifying demons.",
+    "The Tok Dalang masterfully changed his voice to uniquely portray every single character in the story.",
+    "When the final battle concluded, the enthralled audience erupted into loud, appreciative applause.",
+    "Hakim felt deeply inspired by the rich, artistic storytelling heritage of his beloved country.",
+    "He decided to craft his own paper puppets to share the magical story with his friends.",
+    "Preserving traditional performing arts ensures that our unique cultural history is never forgotten."
+  ],
+  questions: [
+    { question: "What performance did Hakim attend in Kelantan?", answer: "He attended a mesmerising Wayang Kulit performance." },
+    { question: "Where did the skilled puppeteer sit?", answer: "The puppeteer sat behind a large, illuminated white screen." },
+    { question: "What did the accompanying musicians play?", answer: "They played a rhythmic melody using traditional drums and gongs." },
+    { question: "What did Hakim decide to craft?", answer: "He decided to craft his own paper puppets to share the story." }
+  ]
+});
+
+stories.push({
+  title: "The Charity Run",
+  content: [
+    "Mei Ling trained diligently for the upcoming charity run to support the local children's hospital.",
+    "She wanted to complete the challenging five-kilometre route through the hilly, winding city park.",
+    "Every evening, she practiced running steady laps around the busy, brightly lit neighbourhood track.",
+    "Her athletic coach taught her how to regulate her breathing and pace herself properly during the race.",
+    "On the morning of the event, thousands of enthusiastic runners gathered in their colourful charity shirts.",
+    "When the loud starting horn sounded, Mei Ling jogged powerfully along the scenic, shaded path.",
+    "She maintained a steady, comfortable pace and bravely ignored the growing exhaustion in her legs.",
+    "As she approached the final stretch, her supportive family cheered her name incredibly loudly.",
+    "Mei Ling crossed the finish line with a huge smile, feeling an overwhelming sense of accomplishment.",
+    "She successfully raised over five hundred ringgit for the important medical equipment fund.",
+    "Her parents hugged her tightly, praising her incredible stamina and generous, caring heart.",
+    "Combining physical fitness with charitable actions is a wonderful way to positively impact society."
+  ],
+  questions: [
+    { question: "Why did Mei Ling train for the charity run?", answer: "She trained to support the local children's hospital." },
+    { question: "What did her athletic coach teach her?", answer: "He taught her how to regulate her breathing and pace herself." },
+    { question: "How much money did Mei Ling raise?", answer: "She successfully raised over five hundred ringgit." },
+    { question: "What is a wonderful way to positively impact society?", answer: "Combining physical fitness with charitable actions is a wonderful way." }
+  ]
+});
+
+stories.push({
+  title: "The Assembly Speech",
+  content: [
+    "Adam was officially selected to deliver a crucial speech at the upcoming Monday school assembly.",
+    "He possessed an intense fear of public speaking and felt overwhelmingly anxious about the task.",
+    "Adam wrote a compelling, persuasive speech about the vital importance of recycling plastic waste.",
+    "He rehearsed his presentation continuously in front of his supportive family in the living room.",
+    "His parents encouraged him warmly, assuring him that his environmental message was incredibly important.",
+    "On the morning of the assembly, Adam's stomach fluttered wildly with nervous, anxious butterflies.",
+    "He walked slowly up to the wooden podium and looked out at the massive, silent audience.",
+    "Taking a deep, steadying breath, Adam began to speak with a remarkably clear and confident voice.",
+    "He passionately explained how every single student could help keep their beautiful school clean.",
+    "The students listened attentively, completely captivated by his powerful, articulate, and eloquent delivery.",
+    "When he concluded his moving speech, the entire hall erupted into thunderous, supportive applause.",
+    "Facing your deepest fears bravely allows you to discover your hidden strengths and impressive capabilities."
+  ],
+  questions: [
+    { question: "What was Adam selected to do?", answer: "He was selected to deliver a crucial speech at the school assembly." },
+    { question: "What was his compelling speech about?", answer: "His speech was about the vital importance of recycling plastic waste." },
+    { question: "How did Adam begin to speak?", answer: "He began to speak with a remarkably clear and confident voice." },
+    { question: "What does facing your deepest fears bravely allow you to do?", answer: "It allows you to discover your hidden strengths and impressive capabilities." }
+  ]
+});
+
+fs.writeFileSync('stories_chunk_3.json', JSON.stringify(stories, null, 2));
