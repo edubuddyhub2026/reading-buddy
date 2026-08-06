@@ -1,3 +1,64 @@
+import redBallImage from './story 1 red ball.png';
+import petCatImage from './story 2 A PET CAT.png';
+import bigBusImage from './story 3 THE BIG BUS.png';
+import rainyDayImage from './story 4 RAINY DAY.png';
+import fastCarImage from './story 5 THE FAST CAR.png';
+import frogImage from './story 6 THE FROG.png';
+import sunImage from './story 7 THE SUN.png';
+import moonImage from './story 8 THE MOON.png';
+import appleImage from './story 9 THE APPLE.png';
+import parkImage from './story 10 THE PARK.png';
+import blueFishImage from './story 11 THE BLUE FISH.png';
+import birdNestImage from './story12 THE BIRD NEST.png';
+import kiteImage from './story 13 THE KITE.png';
+import happyDogImage from './story 14 A HAPPY DOG.png';
+import snowmanImage from './story 15 THE SNOWMAN.png';
+import littleDuckImage from './story 16 THE LITTLE DUCK.png';
+import bearImage from './story 17 THE BEAR.png';
+import schoolBagImage from './story 18 THE SCHOOL BAG.png';
+import newBikeImage from './story 19 THE NEW BIKE.png';
+import trainImage from './story 20 THE TRAIN.png';
+import bakeryImage from './story 21 THE BAKERY.png';
+import farmImage from './story 22 THE FARM.png';
+import beachImage from './story 23 THE BEACH.png';
+import libraryImage from './story 24 THE LIBRARY.png';
+import petShopImage from './story 25 THE PET SHOP.png';
+import toyStoreImage from './story 26 THE TOY STORE.png';
+import gardenImage from './story 27 THE GARDEN.png';
+import picnicImage from './story 28 THE PICNIC.png';
+import fireEngineImage from './story 29 THE FIRE ENGINE.png';
+import magicTrickImage from './story 30 THE MAGIC TRICK.png';
+import lostKeyImage from './story 31 THE LOST KEY.png';
+import artClassImage from './story 32 THE ART CLASS.png';
+import treeHouseImage from './story 33 THE TREE HOUSE.png';
+import bakingDayImage from './story 34 THE BAKING DAY.png';
+import schoolTripImage from './story 35 THE SCHOOL TRIP.png';
+import brokenToyImage from './story 36 THE BROKEN TOY.png';
+import winterMorningImage from './story 37 THE WINTER MORNING.png';
+import newPetImage from './story 38 THE NEW PET.png';
+import soccerMatchImage from './story 39 THE SOCCER MATCH.png';
+import vegetablePatchImage from './story 40 THE VEGETABLE PATCH.png';
+import robotContestImage from './story 41 THE ROBOT CONTEST.png';
+import starryNightImage from './story 42 THE STARRY NIGHT.png';
+import paperBoatImage from './story 43 THE PAPER BOAT.png';
+import missingGlassesImage from './story 44 THE MISSING GLASSES.png';
+import magicSeedImage from './story 45 THE MAGIC SEED.png';
+import forestHikeImage from './story 46 THE FOREST HIKE.png';
+import snowFortImage from './story 47 THE SNOW FORT.png';
+import newStudentImage from './story 48 THE NEW STUDENT.png';
+import missingDogImage from './story 49 THE MISSING DOG.png';
+import bigRaceImage from './story 50 THE BIG RACE.png';
+import mysteryBoxImage from './story 51 THE MYSTERY BOX.png';
+import communityGardenImage from './story 52 THE COMMUNITY GARDEN.png';
+import magicShowImage from './story 53 THE MAGIC SHOW.png';
+import lostWalletImage from './story 54 THE LOST WALLET.png';
+import treePlantingImage from './story 55 THE TREE PLANTING.png';
+import scienceProjectImage from './story 56 THE SCIENCE PROJECT.png';
+import beachCleanImage from './story 57 THE BEACH CLEAN.png';
+import campfireImage from './story 58 THE CAMPFIRE.png';
+import bakingContestImage from './story 59 THE BAKING CONTEST.png';
+import butterflyImage from './story 60 THE BUTTERFLY.png';
+
 export interface StoryQuestion {
   question: string;
   answer: string;
@@ -35,7 +96,7 @@ export const BOOKS: Book[] = [
     stories: [
   {
     "title": "THE RED BALL",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_big_red_ball%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=174521",
+    "image": redBallImage,
     "content": [
       "Alex has a big red ball.",
       "He plays in the sun.",
@@ -65,7 +126,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "A PET CAT",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_cute_fluffy_cat%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=883444",
+    "image": petCatImage,
     "content": [
       "Aina has a soft pet cat.",
       "The cat is very fluffy.",
@@ -95,7 +156,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BIG BUS",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_bright_yellow_school_bus%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=24664",
+    "image": bigBusImage,
     "content": [
       "Wei Jie waits for the big bus.",
       "The bus is bright yellow.",
@@ -125,7 +186,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "A RAINY DAY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_pair_of_green_rain_boots%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=725312",
+    "image": rainyDayImage,
     "content": [
       "Look at the dark grey clouds.",
       "The rain starts to fall.",
@@ -155,7 +216,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE FAST CAR",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_fast_blue_car%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=774832",
+    "image": fastCarImage,
     "content": [
       "Dad drives a fast blue car.",
       "We go for a long ride.",
@@ -185,7 +246,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE FROG",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_small_green_frog%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=317889",
+    "image": frogImage,
     "content": [
       "A small green frog sits there.",
       "It sits on a lily pad.",
@@ -215,7 +276,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SUN",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_bright_yellow_SUN_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=727832",
+    "image": sunImage,
     "content": [
       "The sun is up in the sky.",
       "It is very bright and hot.",
@@ -245,7 +306,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MOON",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_FULL_MOON_with_visible_moon_craters%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=442529",
+    "image": moonImage,
     "content": [
       "The sky is very dark now.",
       "The white moon is up high.",
@@ -275,7 +336,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE APPLE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_big_red_apple%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=134573",
+    "image": appleImage,
     "content": [
       "An apple is on the tree.",
       "It is a big red apple.",
@@ -305,7 +366,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE PARK",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_park_swing%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=828213",
+    "image": parkImage,
     "content": [
       "We go to the fun park.",
       "I run on the green grass.",
@@ -335,7 +396,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BLUE FISH",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_small_blue_fish%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=960732",
+    "image": blueFishImage,
     "content": [
       "A small blue fish swims fast.",
       "It lives in the cool water.",
@@ -367,7 +428,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BIRD NEST",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_bird_nest_with_twigs%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=690357",
+    "image": birdNestImage,
     "content": [
       "A brown bird flies up high.",
       "It carries a twig in its beak.",
@@ -399,7 +460,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE KITE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_red_and_yellow_kite%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=535128",
+    "image": kiteImage,
     "content": [
       "The wind is blowing today.",
       "Aqil takes his kite outside.",
@@ -431,7 +492,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "A HAPPY DOG",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_brown_dog%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=835094",
+    "image": happyDogImage,
     "content": [
       "Buddy is a happy brown dog.",
       "He wags his tail very fast.",
@@ -463,7 +524,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SNOWMAN",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_snowman_with_a_carrot_nose%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=316010",
+    "image": snowmanImage,
     "content": [
       "Cold snow falls on the ground.",
       "The yard is very white.",
@@ -495,7 +556,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE LITTLE DUCK",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_little_yellow_duck%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=967211",
+    "image": littleDuckImage,
     "content": [
       "A little duck walks to the pond.",
       "It has soft yellow feathers.",
@@ -527,7 +588,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BEAR",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_brown_bear%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=927248",
+    "image": bearImage,
     "content": [
       "A big brown bear wakes up.",
       "He is very hungry today.",
@@ -559,7 +620,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SCHOOL BAG",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_school_backpack%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=244418",
+    "image": schoolBagImage,
     "content": [
       "Aisyah packs her school bag.",
       "She puts in a red book.",
@@ -591,7 +652,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE NEW BIKE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_blue_bicycle%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=905865",
+    "image": newBikeImage,
     "content": [
       "Danish has a new blue bike.",
       "The bike has two shiny wheels.",
@@ -623,7 +684,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE TRAIN",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_long_passenger_train%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=237522",
+    "image": trainImage,
     "content": [
       "The long train comes down the track.",
       "It makes a loud whistle sound.",
@@ -655,7 +716,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BAKERY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_loaf_of_fresh_bread%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=333222",
+    "image": bakeryImage,
     "content": [
       "Sara walks to the bakery.",
       "She smells the fresh bread.",
@@ -689,17 +750,17 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE FARM",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_BROWN_COW_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=930410",
+    "image": farmImage,
     "content": [
       "Arun visits the farm today.",
       "He sees a big red barn.",
       "A cow is eating the green grass.",
       "The cow says moo very loudly.",
-      "Arun walks to the pig pen.",
-      "The pigs roll in the brown mud.",
+      "Arun walks to the chicken coop.",
+      "The hens cluck and peck the ground.",
       "A rooster crows on the fence.",
       "Arun feeds some grain to the hens.",
-      "The hens cluck and peck the ground.",
+      "The ducks waddle near the pond.",
       "Arun has fun at the farm."
     ],
     "questions": [
@@ -723,7 +784,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BEACH",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_sandcastle_with_a_flag%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=223988",
+    "image": beachImage,
     "content": [
       "Priya goes to the sunny beach.",
       "She feels the hot sand.",
@@ -757,7 +818,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE LIBRARY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_big_red_book%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=885632",
+    "image": libraryImage,
     "content": [
       "Jun Hao goes to the town library.",
       "It is very quiet inside.",
@@ -791,7 +852,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE PET SHOP",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_fluffy_white_rabbit%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=263319",
+    "image": petShopImage,
     "content": [
       "Devi walks into the pet shop.",
       "She hears a parrot talk.",
@@ -825,7 +886,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE TOY STORE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_toy_robot%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=789684",
+    "image": toyStoreImage,
     "content": [
       "Kavin goes to the toy store.",
       "The store is very big.",
@@ -859,7 +920,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE GARDEN",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_small_watering_can%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=969532",
+    "image": gardenImage,
     "content": [
       "Sofea steps into the garden.",
       "She has a small watering can.",
@@ -893,7 +954,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE PICNIC",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_picnic_basket%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=409398",
+    "image": picnicImage,
     "content": [
       "The family goes for a picnic.",
       "They sit on a blanket.",
@@ -927,7 +988,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE FIRE ENGINE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_red_fire_engine%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=539225",
+    "image": fireEngineImage,
     "content": [
       "A loud siren fills the air.",
       "A red fire engine speeds by.",
@@ -961,7 +1022,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MAGIC TRICK",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_magician's_black_hat%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=792422",
+    "image": magicTrickImage,
     "content": [
       "Ali goes to a fun magic show.",
       "A magician stands on the stage.",
@@ -1007,7 +1068,7 @@ export const BOOKS: Book[] = [
     stories: [
   {
     "title": "THE LOST KEY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_shiny_silver_key%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=837778",
+    "image": lostKeyImage,
     "content": [
       "Hao Ming walked to his front door after school.",
       "He reached into his pocket to find his key.",
@@ -1039,7 +1100,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE ART CLASS",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_paint_palette_and_brush%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=207991",
+    "image": artClassImage,
     "content": [
       "Xin Yi wore her apron for the art class.",
       "She picked up a brush and some blue paint.",
@@ -1071,7 +1132,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE TREEHOUSE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_wooden_treehouse%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=766497",
+    "image": treeHouseImage,
     "content": [
       "Kai Wen and his dad built a wooden treehouse.",
       "They used thick boards and long shiny nails.",
@@ -1103,7 +1164,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BAKING DAY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_tray_of_chocolate_chip_cookies%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=294324",
+    "image": bakingDayImage,
     "content": [
       "Aisyah decided to bake some chocolate chip cookies.",
       "She mixed the flour, sugar, and butter together.",
@@ -1135,7 +1196,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SCHOOL TRIP",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_MONKEY_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=483860",
+    "image": schoolTripImage,
     "content": [
       "The class went on a trip to the zoo.",
       "They rode on a big yellow school bus.",
@@ -1167,7 +1228,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BROKEN TOY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_toy_car_with_a_red_wheel%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=452304",
+    "image": brokenToyImage,
     "content": [
       "Hakim was playing with his favourite toy car.",
       "Suddenly, one of the red wheels fell off.",
@@ -1199,7 +1260,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE WINTER MORNING",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_Snowflakes_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=397455",
+    "image": winterMorningImage,
     "content": [
       "Nabila woke up and looked out her bedroom window.",
       "Everything outside was covered in a thick blanket of snow.",
@@ -1231,7 +1292,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE NEW PET",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_an_ORANGE_STRIPED_KITTEN_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=698357",
+    "image": newPetImage,
     "content": [
       "Rahul went to the animal shelter with his parents.",
       "They wanted to adopt a new family pet.",
@@ -1263,7 +1324,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SOCCER MATCH",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_BLACK_AND_WHITE_SOCCER_BALL_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=513176",
+    "image": soccerMatchImage,
     "content": [
       "Nurin played in a big soccer match on Saturday.",
       "Her team wore bright green shirts and socks.",
@@ -1295,7 +1356,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE VEGETABLE PATCH",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_CARROT_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=936013",
+    "image": vegetablePatchImage,
     "content": [
       "Grandpa showed Aqil his growing vegetable patch.",
       "There were rows of carrots, beans, and fresh lettuce.",
@@ -1327,7 +1388,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE ROBOT CONTEST",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_toy_robot_with_flashing_lights%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=617304",
+    "image": robotContestImage,
     "content": [
       "Li Xuan wanted to build a robot for the school contest.",
       "She gathered old cardboard boxes and plastic bottles.",
@@ -1361,7 +1422,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE STARRY NIGHT",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_telescope%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=171974",
+    "image": starryNightImage,
     "content": [
       "Sanjay loved looking at the dark night sky.",
       "His parents gave him a telescope for his birthday.",
@@ -1395,7 +1456,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE PAPER BOAT",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_folded_paper_boat%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=624624",
+    "image": paperBoatImage,
     "content": [
       "It rained heavily all morning.",
       "A small stream of water flowed down the street.",
@@ -1429,7 +1490,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MISSING GLASSES",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_an_OLD_LADY_WEARING_GLASSES_only%2C_plain_white_background%2C_single_subject%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=888363",
+    "image": missingGlassesImage,
     "content": [
       "Grandma could not find her reading glasses.",
       "She looked on the kitchen table and the counter.",
@@ -1463,7 +1524,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MAGIC SEED",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_blooming_flower_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=189708",
+    "image": magicSeedImage,
     "content": [
       "Asha found a strange, colourful seed in the park.",
       "She took it home and planted it in a pot.",
@@ -1497,7 +1558,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE FOREST HIKE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_wild_mushroom%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=756378",
+    "image": forestHikeImage,
     "content": [
       "Alex and his dad went for a hike in the forest.",
       "They wore sturdy boots and carried a backpack.",
@@ -1531,7 +1592,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SNOW FORT",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_snowball_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=327162",
+    "image": snowFortImage,
     "content": [
       "The school was closed because of the heavy snow.",
       "Faris and his friends went to the nearby park.",
@@ -1565,7 +1626,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE NEW STUDENT",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_ONE_BOY_and_ONE_GIRL_wearing_Malaysian_primary_school_uniforms%2C_plain_white_background%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=636215",
+    "image": newStudentImage,
     "content": [
       "A new student named Vinod joined the class today.",
       "Vinod looked very shy and a little nervous.",
@@ -1599,7 +1660,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MISSING DOG",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_black_coloured_dog_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=622942",
+    "image": missingDogImage,
     "content": [
       "Nisha's dog, Rambo, ran out of the open gate.",
       "Nisha called his name but he did not come back.",
@@ -1633,7 +1694,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BIG RACE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_gold_medal_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=239663",
+    "image": bigRaceImage,
     "content": [
       "Kavin trained every day for the school running race.",
       "He wanted to win the gold medal this year.",
@@ -1667,7 +1728,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MYSTERY BOX",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_cardboard_box%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=150753",
+    "image": mysteryBoxImage,
     "content": [
       "Wei Jie found a dusty wooden box in the attic.",
       "The box was locked with a small brass padlock.",
@@ -1703,7 +1764,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE COMMUNITY GARDEN",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_ripe_red_tomato%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=261416",
+    "image": communityGardenImage,
     "content": [
       "Priya noticed an empty patch of dirt near her street.",
       "She wanted to turn it into a beautiful community garden.",
@@ -1739,7 +1800,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE MAGIC SHOW",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_MAGIC_WAND_only%2C_black_wand_with_white_tips%2C_slight_magical_sparkle_around_the_wand%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects%2C_no_magician%2C_no_magic_hat%2C_no_rabbit%2C_no_cards%2C_no_stage%2C_no_other_magic_props%2C_no_people%2C_no_hands._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=384246",
+    "image": magicShowImage,
     "content": [
       "Aqil received a magic kit for his tenth birthday.",
       "He practiced the magic tricks in his bedroom every day.",
@@ -1775,7 +1836,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE LOST WALLET",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_brown_leather_wallet%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=339949",
+    "image": lostWalletImage,
     "content": [
       "Maryam was walking home from the local grocery store.",
       "She saw a brown leather wallet lying on the pavement.",
@@ -1811,7 +1872,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE TREE PLANTING",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_green_tree_sapling%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=347833",
+    "image": treePlantingImage,
     "content": [
       "The school organised a special tree planting day.",
       "Every student was given a small green sapling.",
@@ -1847,7 +1908,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE SCIENCE PROJECT",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_baking_soda_volcano%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=984172",
+    "image": scienceProjectImage,
     "content": [
       "Pei Yi had to complete a project for the science fair.",
       "She decided to build a model of an erupting volcano.",
@@ -1883,7 +1944,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BEACH CLEAN",
-    "image": "https://image.pollinations.ai/prompt/3D_render_of_a_clean_beach_scenery_with_sand_and_sea._No_people._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=137533",
+    "image": beachCleanImage,
     "content": [
       "Hakim and his family went to the beach on Sunday.",
       "They noticed that the sand was covered in plastic rubbish.",
@@ -1919,7 +1980,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE CAMPFIRE",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_campfire_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=406454",
+    "image": campfireImage,
     "content": [
       "The family pitched their tent in the quiet woods.",
       "As the sun set, the air began to feel chilly.",
@@ -1955,7 +2016,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BAKING CONTEST",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_an_apple_pie_only%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=164946",
+    "image": bakingContestImage,
     "content": [
       "Sofea entered the village baking contest with her grandma's recipe.",
       "She wanted to bake a classic apple pie with cinnamon.",
@@ -1991,7 +2052,7 @@ export const BOOKS: Book[] = [
   },
   {
     "title": "THE BUTTERFLY",
-    "image": "https://image.pollinations.ai/prompt/Isolated_3D_render_of_a_colorful_butterfly%2C_plain_white_background%2C_single_object%2C_vocabulary_flashcard_style._No_background%2C_no_scenery%2C_no_extra_objects._Cute_bright_child-friendly_Pixar-style.?width=800&height=800&nologo=true&seed=936830",
+    "image": butterflyImage,
     "content": [
       "Arun found a green caterpillar on a leaf in his garden.",
       "He put it gently inside a large glass jar.",

@@ -8,6 +8,10 @@ import { Play, Pause, Square, RotateCcw, Home, BookOpen, Headphones, Brain, Spar
 import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
 import { BOOKS, Book } from './data';
+import { StoryImage } from './components/StoryImage';
+import edyReadImage from './EDY READ.png';
+import edyWaveImage from './EDY WAVE.png';
+import edyPialaImage from './EDY PIALA.png';
 
 const DEFAULT_RATE = 0.75;
 
@@ -166,7 +170,9 @@ export default function App() {
     };
 
     utterance.onerror = (e) => {
-      console.error("Speech synthesis error:", e);
+      if (e.error !== 'canceled' && e.error !== 'interrupted') {
+        console.warn("Speech synthesis error:", e.error);
+      }
     };
 
     window.speechSynthesis.speak(utterance);
@@ -182,7 +188,9 @@ export default function App() {
     utterance.pitch = 1.15;
     
     utterance.onerror = (e) => {
-      console.error("Speech synthesis error:", e);
+      if (e.error !== 'canceled' && e.error !== 'interrupted') {
+        console.warn("Speech synthesis error:", e.error);
+      }
     };
     
     window.speechSynthesis.speak(utterance);
@@ -316,71 +324,75 @@ export default function App() {
           <div className="absolute top-2/3 right-1/3 text-5xl">☁️</div>
         </div>
 
-        <div className="max-w-5xl w-full mx-auto flex flex-col bg-white/95 backdrop-blur-md rounded-[32px] sm:rounded-[48px] shadow-2xl border-[4px] sm:border-[6px] border-white/80 relative p-4 sm:p-8 md:p-10 z-10">
+        <div className="max-w-5xl w-full mx-auto flex flex-col bg-white/95 backdrop-blur-md rounded-[28px] sm:rounded-[36px] md:rounded-[48px] shadow-2xl border-[3px] sm:border-[4px] md:border-[6px] border-white/80 relative p-3.5 sm:p-6 md:p-10 z-10 overflow-hidden">
           
           {/* Hero Header */}
-          <div className="text-center mb-8 relative flex flex-col items-center">
-            <div className="flex justify-center items-center gap-4 mb-2">
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 drop-shadow-sm rotate-[-2deg] mb-1 leading-none">
+          <div className="mb-[8px] relative flex flex-col items-center w-full text-center">
+            {/* Title Row */}
+            <div className="relative flex items-center justify-center mb-[8px]">
+              <div className="flex flex-col items-center leading-none">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-400 drop-shadow-sm mb-1">
                   READING
                 </h1>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-sky-400 to-cyan-400 drop-shadow-sm rotate-[2deg] leading-none">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-sky-400 to-cyan-400 drop-shadow-sm">
                   BUDDY
                 </h1>
               </div>
-              <span className="text-7xl sm:text-8xl animate-pulse drop-shadow-md">🦉</span>
             </div>
-            <div className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-black text-lg sm:text-xl px-10 py-2.5 rounded-full shadow-lg mt-4 border-b-4 border-purple-700 tracking-wide">
+
+            {/* Purple Pill */}
+            <div className="bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-extrabold text-[11px] sm:text-sm md:text-base px-5 sm:px-8 py-2 sm:py-2.5 rounded-full shadow-md tracking-wide mb-[8px] inline-block max-w-[95%]">
               Read • Listen • Understand
             </div>
-          </div>
 
-          {/* Welcome Card */}
-          <div className="flex justify-center mb-6 w-full px-2">
-            <div className="flex items-center gap-3 max-w-full">
-              <span className="text-4xl sm:text-5xl drop-shadow-sm shrink-0">🦉</span>
-              <div className="relative bg-white text-slate-700 font-bold px-4 py-1.5 rounded-xl text-xs sm:text-sm border-2 border-slate-100 shadow-sm flex items-center shrink">
-                <span className="leading-tight text-left flex flex-col justify-center">
-                  <span>Hi, friend!</span>
-                  <span>Let's start today's reading adventure!</span>
+            {/* Greeting Bubble & Edy Waving Container */}
+            <div className="flex flex-col md:flex-row items-center justify-center relative mx-auto w-full max-w-full px-2">
+              <img 
+                src={edyWaveImage} 
+                alt="Edy Waving" 
+                className="w-48 sm:w-64 md:w-[400px] max-w-[85vw] md:max-w-none h-auto drop-shadow-md shrink-0 md:-mr-28 z-10" 
+              />
+              <div className="relative bg-white text-slate-700 font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm border border-slate-200 shadow-md flex items-center text-center md:text-left shrink-0 z-0 mt-3 md:mt-0 w-auto max-w-[90%] sm:max-w-md break-words whitespace-normal h-auto">
+                <div className="absolute left-1/2 -top-[6px] -translate-x-1/2 border-b-[6px] border-b-white border-x-[6px] border-x-transparent border-t-0 md:left-[-6px] md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:border-r-[7px] md:border-r-white md:border-y-[6px] md:border-y-transparent md:border-l-0 drop-shadow-sm" />
+                <span className="leading-tight flex flex-col justify-center w-full">
+                  <span className="font-extrabold text-slate-900 text-sm sm:text-base">Hi, friend!</span>
+                  <span className="text-slate-600 text-xs sm:text-sm font-medium">Let's start today's reading adventure!</span>
                 </span>
-                <div className="absolute top-1/2 -left-1.5 w-3 h-3 bg-white border-l-2 border-b-2 border-slate-100 transform rotate-45 -translate-y-1/2"></div>
               </div>
             </div>
           </div>
 
           {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
-            <div className="bg-emerald-50 rounded-[24px] p-4 border-2 border-emerald-100 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl bg-white w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">📖</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mb-6 sm:mb-8">
+            <div className="bg-[#ECFDF5] rounded-[24px] p-4 border border-[#A7F3D0] flex items-center gap-3.5 shadow-sm hover:shadow-md transition-all">
+              <div className="text-3xl bg-white w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">📖</div>
               <div className="flex-grow text-left">
-                <h3 className="text-lg font-bold text-emerald-800">Read</h3>
-                <p className="text-emerald-700 text-sm font-medium leading-tight">Read exciting stories.</p>
+                <h3 className="text-lg font-black text-[#047857]">Read</h3>
+                <p className="text-[#059669] text-xs font-semibold leading-tight">Read exciting stories.</p>
               </div>
-              <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-sm shrink-0 font-bold">
+              <div className="w-8 h-8 rounded-full bg-[#00C853] text-white flex items-center justify-center shadow-md shrink-0 font-bold">
                 <ArrowRight size={18} />
               </div>
             </div>
             
-            <div className="bg-purple-50 rounded-[24px] p-4 border-2 border-purple-100 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl bg-white w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">🎧</div>
+            <div className="bg-[#F5F3FF] rounded-[24px] p-4 border border-[#DDD6FE] flex items-center gap-3.5 shadow-sm hover:shadow-md transition-all">
+              <div className="text-3xl bg-white w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">🎧</div>
               <div className="flex-grow text-left">
-                <h3 className="text-lg font-bold text-purple-800">Listen</h3>
-                <p className="text-purple-700 text-sm font-medium leading-tight">Listen to British English.</p>
+                <h3 className="text-lg font-black text-[#6D28D9]">Listen</h3>
+                <p className="text-[#7C3AED] text-xs font-semibold leading-tight">Listen to British English.</p>
               </div>
-              <div className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center shadow-sm shrink-0 font-bold">
+              <div className="w-8 h-8 rounded-full bg-[#A855F7] text-white flex items-center justify-center shadow-md shrink-0 font-bold">
                 <ArrowRight size={18} />
               </div>
             </div>
 
-            <div className="bg-sky-50 rounded-[24px] p-4 border-2 border-sky-100 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl bg-white w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">🧠</div>
+            <div className="bg-[#EFF6FF] rounded-[24px] p-4 border border-[#BFDBFE] flex items-center gap-3.5 shadow-sm hover:shadow-md transition-all">
+              <div className="text-3xl bg-white w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">🧠</div>
               <div className="flex-grow text-left">
-                <h3 className="text-lg font-bold text-sky-800">Understand</h3>
-                <p className="text-sky-700 text-sm font-medium leading-tight">Answer fun questions.</p>
+                <h3 className="text-lg font-black text-[#1E40AF]">Understand</h3>
+                <p className="text-[#2563EB] text-xs font-semibold leading-tight">Answer fun questions.</p>
               </div>
-              <div className="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center shadow-sm shrink-0 font-bold">
+              <div className="w-8 h-8 rounded-full bg-[#0091EA] text-white flex items-center justify-center shadow-md shrink-0 font-bold">
                 <ArrowRight size={18} />
               </div>
             </div>
@@ -398,7 +410,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 mb-4 relative z-10">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-4 relative z-10">
                 {/* Stage 1 */}
                 {(() => {
                   const isCompleted = (progress['little'] || 0) >= 10;
@@ -410,7 +422,7 @@ export default function App() {
                         </div>
                         <div className="font-black text-emerald-900 text-base mb-0.5">⭐ Stage 1</div>
                         <div className="text-xs font-bold text-emerald-700 mb-1">Books 1–10</div>
-                        <div className="text-2xl mb-1">🏆</div>
+                        <img src={edyPialaImage} alt="Completed Stage" className="w-18 h-18 sm:w-20 sm:h-20 object-contain mb-1 drop-shadow-sm" />
                         <div className="text-[10px] font-black text-emerald-600 tracking-widest">⭐⭐⭐</div>
                       </div>
                     );
@@ -435,7 +447,7 @@ export default function App() {
                         </div>
                         <div className="font-black text-emerald-900 text-base mb-0.5">⭐⭐ Stage 2</div>
                         <div className="text-xs font-bold text-emerald-700 mb-1">Books 11–20</div>
-                        <div className="text-2xl mb-1">🏆</div>
+                        <img src={edyPialaImage} alt="Completed Stage" className="w-18 h-18 sm:w-20 sm:h-20 object-contain mb-1 drop-shadow-sm" />
                         <div className="text-[10px] font-black text-emerald-600 tracking-widest">⭐⭐⭐</div>
                       </div>
                     );
@@ -460,7 +472,7 @@ export default function App() {
                         </div>
                         <div className="font-black text-emerald-900 text-base mb-0.5">⭐⭐⭐ Stage 3</div>
                         <div className="text-xs font-bold text-emerald-700 mb-1">Books 21–30</div>
-                        <div className="text-2xl mb-1">🏆</div>
+                        <img src={edyPialaImage} alt="Completed Stage" className="w-18 h-18 sm:w-20 sm:h-20 object-contain mb-1 drop-shadow-sm" />
                         <div className="text-[10px] font-black text-emerald-600 tracking-widest">⭐⭐⭐</div>
                       </div>
                     );
@@ -505,7 +517,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 mb-4 relative z-10">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-4 relative z-10">
                 {/* Stage 1 */}
                 {(() => {
                   const isCompleted = (progress['growing'] || 0) >= 10;
@@ -517,7 +529,7 @@ export default function App() {
                         </div>
                         <div className="font-black text-blue-900 text-base mb-0.5">⭐ Stage 1</div>
                         <div className="text-xs font-bold text-blue-700 mb-1">Books 1–10</div>
-                        <div className="text-2xl mb-1">🏆</div>
+                        <img src={edyPialaImage} alt="Completed Stage" className="w-18 h-18 sm:w-20 sm:h-20 object-contain mb-1 drop-shadow-sm" />
                         <div className="text-[10px] font-black text-blue-600 tracking-widest">⭐⭐⭐</div>
                       </div>
                     );
@@ -542,7 +554,7 @@ export default function App() {
                         </div>
                         <div className="font-black text-blue-900 text-base mb-0.5">⭐⭐ Stage 2</div>
                         <div className="text-xs font-bold text-blue-700 mb-1">Books 11–20</div>
-                        <div className="text-2xl mb-1">🏆</div>
+                        <img src={edyPialaImage} alt="Completed Stage" className="w-18 h-18 sm:w-20 sm:h-20 object-contain mb-1 drop-shadow-sm" />
                         <div className="text-[10px] font-black text-blue-600 tracking-widest">⭐⭐⭐</div>
                       </div>
                     );
@@ -567,7 +579,7 @@ export default function App() {
                         </div>
                         <div className="font-black text-blue-900 text-base mb-0.5">⭐⭐⭐ Stage 3</div>
                         <div className="text-xs font-bold text-blue-700 mb-1">Books 21–30</div>
-                        <div className="text-2xl mb-1">🏆</div>
+                        <img src={edyPialaImage} alt="Completed Stage" className="w-18 h-18 sm:w-20 sm:h-20 object-contain mb-1 drop-shadow-sm" />
                         <div className="text-[10px] font-black text-blue-600 tracking-widest">⭐⭐⭐</div>
                       </div>
                     );
@@ -742,9 +754,9 @@ export default function App() {
             initial={{ scale: 0, y: -50 }}
             animate={{ scale: 1, y: 0 }}
             transition={{ type: "spring", bounce: 0.6, duration: 0.8 }}
-            className="text-6xl sm:text-8xl mb-4 drop-shadow-md"
+            className="mb-4 drop-shadow-md flex justify-center items-center"
           >
-            🏆
+            <img src={edyPialaImage} alt="Edy Celebrating" className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain drop-shadow-xl" />
           </motion.div>
           <motion.h1 
             initial={{ scale: 0.8, opacity: 0 }}
@@ -787,12 +799,14 @@ export default function App() {
               {primaryButtonText}
             </motion.button>
             
-            <button 
-              onClick={handleGoHome}
-              className="w-full py-3 sm:py-4 rounded-2xl text-slate-500 font-bold text-base sm:text-lg hover:bg-slate-50 border-2 border-slate-100 transition-colors"
-            >
-              Back to Home
-            </button>
+            {primaryButtonText !== "Back to Home" && (
+              <button 
+                onClick={handleGoHome}
+                className="w-full py-3 sm:py-4 rounded-2xl text-slate-500 font-bold text-base sm:text-lg hover:bg-slate-50 border-2 border-slate-100 transition-colors"
+              >
+                Back to Home
+              </button>
+            )}
           </motion.div>
         </div>
 
@@ -874,10 +888,9 @@ export default function App() {
                 {/* Illustration - Resizable */}
                 <div className="flex-shrink flex-grow min-h-[80px] max-h-[120px] sm:max-h-[160px] md:max-h-[200px] w-full flex justify-center mb-1 sm:mb-3">
                   <div className="aspect-square h-full bg-orange-50 rounded-2xl border-4 border-orange-100 p-1 shadow-md">
-                    <img 
+                    <StoryImage 
                       src={currentStory?.image} 
-                      alt="Story illustration" 
-                      className="w-full h-full object-cover rounded-xl"
+                      title={currentStory?.title} 
                     />
                   </div>
                 </div>
