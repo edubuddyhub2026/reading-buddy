@@ -1,12 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 body {
     font-family: 'Quicksand', sans-serif;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    background-color: #faf5ff;
 }
 
-@keyframes bounce-x {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(-25%); }
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(2deg); }
 }
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(-2deg); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes sun-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-sun-slow {
+  animation: sun-spin 60s linear infinite;
+}
+
+/* 3D Game Text & Shadow Utilities matching EduBuddy Soft Purple & Yellow Theme */
+.text-3d-reading {
+  color: #8b5cf6;
+  -webkit-text-stroke: 6px #ffffff;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 4px 0 #6d28d9) drop-shadow(0 6px 12px rgba(109, 40, 217, 0.2));
+}
+
+.text-3d-buddy {
+  color: #f59e0b;
+  -webkit-text-stroke: 6px #ffffff;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 4px 0 #d97706) drop-shadow(0 6px 12px rgba(217, 119, 6, 0.2));
+}
+
+/* Glossy game button overlay */
+.btn-gloss {
+  position: relative;
+  overflow: hidden;
+}
+.btn-gloss::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Soft muted success ribbon */
+.corner-ribbon-completed {
+  position: absolute;
+  top: 12px;
+  right: -32px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 28px;
+  box-shadow: 0 2px 4px rgba(4, 120, 87, 0.25);
+  z-index: 10;
+}
+
+
 
