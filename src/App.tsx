@@ -8,6 +8,7 @@ import { Play, Pause, Square, RotateCcw, Home, BookOpen, Headphones, Brain, Spar
 import { motion, AnimatePresence } from 'motion/react';
 import { BOOKS, Book } from './data';
 import { VectorStar3D, VectorFloatingStorybook, VectorStageOpenBook, VectorStageBookStack, VectorStageGoldTrophy, VectorStarRow, VectorEduOwl, VectorUnderstandBubble } from './components/HomeVectorIllustrations';
+import { soundEffects } from './utils/soundEffects';
 
 
 const DEFAULT_RATE = 0.75;
@@ -28,6 +29,13 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('readingBuddyProgress', JSON.stringify(progress));
   }, [progress]);
+
+  // Play celebration fanfare when reaching Congratulations screen
+  useEffect(() => {
+    if (currentView === 'congrats') {
+      soundEffects.playCongratsSound();
+    }
+  }, [currentView]);
   
   const currentStoryContent = selectedBook?.stories[currentStoryIndex]?.content || [];
   const currentStory = selectedBook?.stories[currentStoryIndex];
@@ -133,6 +141,7 @@ export default function App() {
   }, [selectedVoice]);
 
   const handlePlayResume = () => {
+    soundEffects.playClickSound();
     if (playbackStateRef.current === 'playing') return;
     
     if (nextIndexToPlay.current >= currentStoryContent.length) {
@@ -160,6 +169,7 @@ export default function App() {
 
   // Allow clicking a sentence to play from there
   const handleSentenceClick = (idx: number) => {
+    soundEffects.playClickSound();
     handleStop();
     nextIndexToPlay.current = idx;
     // Slight delay to ensure cancel is processed before playing new sentence
@@ -167,6 +177,7 @@ export default function App() {
   };
 
   const handleReadAgain = () => {
+    soundEffects.playClickSound();
     handleStop();
     setTimeout(() => {
       setCurrentIndex(-1);
@@ -176,6 +187,7 @@ export default function App() {
   };
 
   const handleOpenBook = (book: Book, resetProgress: boolean = false) => {
+    soundEffects.playClickSound();
     setSelectedBook(book);
     
     let targetIndex = 0;
@@ -197,7 +209,20 @@ export default function App() {
     nextIndexToPlay.current = 0;
   };
 
+  const handleOpenStage = (book: Book, startIndex: number) => {
+    soundEffects.playClickSound();
+    setSelectedBook(book);
+    setCurrentStoryIndex(startIndex);
+    setCurrentView('reading');
+    setShowAnswer({});
+    setQuestionsExpanded(false);
+    handleStop();
+    setCurrentIndex(-1);
+    nextIndexToPlay.current = 0;
+  };
+
   const handleGoHome = () => {
+    soundEffects.playClickSound();
     handleStop();
     setCurrentView('home');
     setSelectedBook(null);
@@ -219,6 +244,7 @@ export default function App() {
     if (isBookEnd) {
       if (currentBookIndex + 1 < BOOKS.length) {
         // Cross from Level 1 Story 30 forward to Level 2 Story 1
+        soundEffects.playNavigationSound();
         const nextBook = BOOKS[currentBookIndex + 1];
         setDirection(1);
         setSelectedBook(nextBook);
@@ -237,6 +263,7 @@ export default function App() {
       setProgress(prev => ({ ...prev, [selectedBook.id]: nextIndex }));
       setCurrentView('congrats');
     } else {
+      soundEffects.playNavigationSound();
       setProgress(prev => ({ ...prev, [selectedBook.id]: nextIndex }));
       setDirection(1);
       setCurrentStoryIndex(nextIndex);
@@ -248,6 +275,7 @@ export default function App() {
   };
 
   const handlePreviousStory = () => {
+    soundEffects.playNavigationSound();
     handleStop();
     if (!selectedBook) return;
 
@@ -402,7 +430,10 @@ export default function App() {
           {/* READ / LISTEN / UNDERSTAND — ALL 3 USE THE SAME SOFT LAVENDER COLOR FAMILY */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
             {/* Read Tile */}
-            <div className="bg-gradient-to-r from-[#faf7ff] to-[#f4eeff] rounded-[24px] p-3 sm:p-4 border border-purple-200/80 shadow-[0_2px_0_#ede9fe] flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all group">
+            <div 
+              onClick={() => soundEffects.playClickSound()}
+              className="bg-gradient-to-r from-[#faf7ff] to-[#f4eeff] rounded-[24px] p-3 sm:p-4 border border-purple-200/80 shadow-[0_2px_0_#ede9fe] flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 active:scale-98 transition-all group cursor-pointer"
+            >
               <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-[0_2px_0_#6b21a8] group-hover:scale-105 transition-transform p-2.5">
                 <BookOpen size={26} className="stroke-[2.5]" />
               </div>
@@ -416,7 +447,10 @@ export default function App() {
             </div>
 
             {/* Listen Tile (Same Matching Soft-Purple/Lavender Theme) */}
-            <div className="bg-gradient-to-r from-[#faf7ff] to-[#f4eeff] rounded-[24px] p-3 sm:p-4 border border-purple-200/80 shadow-[0_2px_0_#ede9fe] flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all group">
+            <div 
+              onClick={() => soundEffects.playClickSound()}
+              className="bg-gradient-to-r from-[#faf7ff] to-[#f4eeff] rounded-[24px] p-3 sm:p-4 border border-purple-200/80 shadow-[0_2px_0_#ede9fe] flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 active:scale-98 transition-all group cursor-pointer"
+            >
               <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-[0_2px_0_#6b21a8] group-hover:scale-105 transition-transform p-2.5">
                 <Headphones size={26} className="stroke-[2.5]" />
               </div>
@@ -430,7 +464,10 @@ export default function App() {
             </div>
 
             {/* Understand Tile (Same Matching Soft-Purple/Lavender Theme) */}
-            <div className="bg-gradient-to-r from-[#faf7ff] to-[#f4eeff] rounded-[24px] p-3 sm:p-4 border border-purple-200/80 shadow-[0_2px_0_#ede9fe] flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all group">
+            <div 
+              onClick={() => soundEffects.playClickSound()}
+              className="bg-gradient-to-r from-[#faf7ff] to-[#f4eeff] rounded-[24px] p-3 sm:p-4 border border-purple-200/80 shadow-[0_2px_0_#ede9fe] flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 active:scale-98 transition-all group cursor-pointer"
+            >
               <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-[0_2px_0_#6b21a8] group-hover:scale-105 transition-transform p-2.5">
                 <HelpCircle size={26} className="stroke-[2.5]" />
               </div>
@@ -469,7 +506,10 @@ export default function App() {
                 {(() => {
                   const isCompleted = littleProgress >= 10;
                   return (
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 transition-transform relative overflow-hidden">
+                    <div 
+                      onClick={() => handleOpenStage(BOOKS[0], 0)}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 active:scale-95 transition-all relative overflow-hidden cursor-pointer"
+                    >
                       {isCompleted && (
                         <div className="corner-ribbon-completed">
                           COMPLETED
@@ -492,7 +532,10 @@ export default function App() {
                 {(() => {
                   const isCompleted = littleProgress >= 20;
                   return (
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 transition-transform relative overflow-hidden">
+                    <div 
+                      onClick={() => handleOpenStage(BOOKS[0], 10)}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 active:scale-95 transition-all relative overflow-hidden cursor-pointer"
+                    >
                       {isCompleted && (
                         <div className="corner-ribbon-completed">
                           COMPLETED
@@ -515,7 +558,10 @@ export default function App() {
                 {(() => {
                   const isCompleted = littleProgress >= 30;
                   return (
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 transition-transform relative overflow-hidden">
+                    <div 
+                      onClick={() => handleOpenStage(BOOKS[0], 20)}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 active:scale-95 transition-all relative overflow-hidden cursor-pointer"
+                    >
                       {isCompleted && (
                         <div className="corner-ribbon-completed">
                           COMPLETED
@@ -584,7 +630,10 @@ export default function App() {
                 {(() => {
                   const isCompleted = growingProgress >= 10;
                   return (
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 transition-transform relative overflow-hidden">
+                    <div 
+                      onClick={() => handleOpenStage(BOOKS[1], 0)}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 active:scale-95 transition-all relative overflow-hidden cursor-pointer"
+                    >
                       {isCompleted && (
                         <div className="corner-ribbon-completed">
                           COMPLETED
@@ -607,7 +656,10 @@ export default function App() {
                 {(() => {
                   const isCompleted = growingProgress >= 20;
                   return (
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 transition-transform relative overflow-hidden">
+                    <div 
+                      onClick={() => handleOpenStage(BOOKS[1], 10)}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 active:scale-95 transition-all relative overflow-hidden cursor-pointer"
+                    >
                       {isCompleted && (
                         <div className="corner-ribbon-completed">
                           COMPLETED
@@ -630,7 +682,10 @@ export default function App() {
                 {(() => {
                   const isCompleted = growingProgress >= 30;
                   return (
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 transition-transform relative overflow-hidden">
+                    <div 
+                      onClick={() => handleOpenStage(BOOKS[1], 20)}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-3.5 flex flex-col items-center text-center border border-purple-100 shadow-xs hover:-translate-y-0.5 active:scale-95 transition-all relative overflow-hidden cursor-pointer"
+                    >
                       {isCompleted && (
                         <div className="corner-ribbon-completed">
                           COMPLETED
@@ -703,6 +758,7 @@ export default function App() {
     let primaryButtonText = `📘 Continue to ${BOOKS[BOOKS.findIndex(b => b.id === selectedBook.id) + 1]?.title || 'Home'}`;
     let primaryButtonColor = 'bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 hover:brightness-105 shadow-[0_4px_0_#4c1d95]';
     let handlePrimaryClick = () => {
+       soundEffects.playClickSound();
        const nextBookIndex = BOOKS.findIndex(b => b.id === selectedBook.id) + 1;
        if (nextBookIndex < BOOKS.length) {
          handleOpenBook(BOOKS[nextBookIndex]);
@@ -722,6 +778,7 @@ export default function App() {
         primaryButtonText = "Continue to Stage 2";
         primaryButtonColor = "bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 hover:brightness-105 shadow-[0_4px_0_#4c1d95]";
         handlePrimaryClick = () => {
+          soundEffects.playClickSound();
           setDirection(1);
           setProgress(prev => ({ ...prev, [selectedBook.id]: 10 }));
           setCurrentStoryIndex(10);
@@ -741,6 +798,7 @@ export default function App() {
         primaryButtonText = "Continue to Stage 3";
         primaryButtonColor = "bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 hover:brightness-105 shadow-[0_4px_0_#4c1d95]";
         handlePrimaryClick = () => {
+          soundEffects.playClickSound();
           setDirection(1);
           setProgress(prev => ({ ...prev, [selectedBook.id]: 20 }));
           setCurrentStoryIndex(20);
@@ -771,6 +829,7 @@ export default function App() {
         primaryButtonText = "Continue to Stage 2";
         primaryButtonColor = "bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:brightness-105 shadow-[0_4px_0_#b45309] text-slate-900";
         handlePrimaryClick = () => {
+          soundEffects.playClickSound();
           setDirection(1);
           setProgress(prev => ({ ...prev, [selectedBook.id]: 10 }));
           setCurrentStoryIndex(10);
@@ -790,6 +849,7 @@ export default function App() {
         primaryButtonText = "Continue to Stage 3";
         primaryButtonColor = "bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:brightness-105 shadow-[0_4px_0_#b45309] text-slate-900";
         handlePrimaryClick = () => {
+          soundEffects.playClickSound();
           setDirection(1);
           setProgress(prev => ({ ...prev, [selectedBook.id]: 20 }));
           setCurrentStoryIndex(20);
@@ -809,6 +869,7 @@ export default function App() {
         primaryButtonText = "Back to Home";
         primaryButtonColor = "bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 hover:brightness-105 shadow-[0_4px_0_#4c1d95]";
         handlePrimaryClick = () => {
+          soundEffects.playClickSound();
           handleGoHome();
         };
       }
@@ -1014,7 +1075,10 @@ export default function App() {
         {/* Questions Section */}
         <div className="w-full bg-[#f8f4ff] rounded-2xl border border-purple-200/90 overflow-hidden flex flex-col mb-2 sm:mb-3">
           <button 
-            onClick={() => setQuestionsExpanded(!questionsExpanded)}
+            onClick={() => {
+              soundEffects.playClickSound();
+              setQuestionsExpanded(!questionsExpanded);
+            }}
             className="w-full py-2 sm:py-2.5 px-4 flex items-center justify-between text-xs sm:text-sm font-black text-purple-900 hover:bg-purple-100/70 transition-colors cursor-pointer"
           >
             <span className="flex items-center gap-1.5">
@@ -1042,7 +1106,10 @@ export default function App() {
                             {q.question}
                           </p>
                           <button
-                            onClick={() => playStandaloneText(q.question)}
+                            onClick={() => {
+                              soundEffects.playClickSound();
+                              playStandaloneText(q.question);
+                            }}
                             className="shrink-0 text-purple-600 hover:text-purple-800 transition-colors p-1 cursor-pointer"
                             title="Listen to question"
                           >
@@ -1050,7 +1117,10 @@ export default function App() {
                           </button>
                         </div>
                         <button 
-                          onClick={() => setShowAnswer(prev => ({ ...prev, [i]: !prev[i] }))}
+                          onClick={() => {
+                            soundEffects.playClickSound();
+                            setShowAnswer(prev => ({ ...prev, [i]: !prev[i] }));
+                          }}
                           className={`shrink-0 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full transition-colors active:scale-95 cursor-pointer ${showAnswer[i] ? 'bg-purple-600 text-white shadow-inner' : 'bg-purple-100 text-purple-700 hover:bg-purple-200'}`}
                           title={showAnswer[i] ? "Hide Answer" : "Show Answer"}
                         >
@@ -1069,7 +1139,10 @@ export default function App() {
                             <div className="flex items-center justify-between bg-amber-50 text-amber-950 text-[11px] sm:text-xs font-bold py-1.5 px-3 rounded-xl border border-amber-200 shadow-xs">
                               <span>{q.answer}</span>
                               <button
-                                onClick={() => playStandaloneText(q.answer)}
+                                onClick={() => {
+                                  soundEffects.playClickSound();
+                                  playStandaloneText(q.answer);
+                                }}
                                 className="shrink-0 text-amber-700 hover:text-amber-900 transition-colors p-1 ml-2 cursor-pointer"
                                 title="Listen to answer"
                               >
